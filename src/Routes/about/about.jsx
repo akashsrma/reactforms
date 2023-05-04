@@ -1,6 +1,9 @@
 import Logo from '../../assets/images/dheena.png'
 import product1 from '../../assets/images/elon.png'
 import product2 from '../../assets/images/mass.png'
+import product3 from '../../assets/images/Bscholarly.png'
+import product4 from '../../assets/images/apdul.png'
+import product5 from '../../assets/images/alexander.png'
 
 
 const About = ()=>{
@@ -53,6 +56,48 @@ const About = ()=>{
               />
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">Jack Smith</div>
+                <p className="text-gray-700 text-base">
+                  Jack Smith is todolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+            <div className="max-w-sm rounded overflow-hidden shadow-lg mb-4">
+              <img
+                className="w-full h-56 object-cover"
+                src={product3}
+                alt="Team member"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">Bscholarly</div>
+                <p className="text-gray-700 text-base">
+                  Jack Smith is todolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+            <div className="max-w-sm rounded overflow-hidden shadow-lg mb-4">
+              <img
+                className="w-full h-56 object-cover"
+                src={product4}
+                alt="Team member"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">A.P.J. Apdul Kalam</div>
+                <p className="text-gray-700 text-base">
+                  Jack Smith is todolor sit amet, consectetur adipiscing elit. Sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+            <div className="max-w-sm rounded overflow-hidden shadow-lg mb-4">
+              <img
+                className="w-full h-56 object-cover"
+                src={product5}
+                alt="Team member"
+              />
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">Alexendar</div>
                 <p className="text-gray-700 text-base">
                   Jack Smith is todolor sit amet, consectetur adipiscing elit. Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
