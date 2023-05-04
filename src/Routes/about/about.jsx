@@ -1,6 +1,9 @@
 import Logo from '../../assets/images/dheena.png'
 import product1 from '../../assets/images/elon.png'
 import product2 from '../../assets/images/mass.png'
+import product3 from '../../assets/images/Bscholarly.png'
+import product4 from '../../assets/images/apdul.png'
+import product5 from '../../assets/images/alexander.png'
 
 
 const About = ()=>{
@@ -54,7 +57,7 @@ const About = ()=>{
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">Jack Smith</div>
                 <p className="text-gray-700 text-base">
-                  Jack Smith is todolor sit amet, consectetur adipiscing elit. Sed
+                  Jack Smith is to dolor sit amet, consectetur adipiscing elit. Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
