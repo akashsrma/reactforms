@@ -2,7 +2,7 @@ const Navbar = ()=>{
     return (
       <nav className=" w-full h-24 text-blue-400 shadow-md  flex justify-between items-center p-[1rem]">
         <div className="flex items-center justify-center">
-          <h2 className="p-10  text-black cursor-pointer">Dogecoin</h2>
+          <h2 className="p-10 text-black cursor-pointer">Dogecoin</h2>
         </div>
         <div>
           <ul className="flex gap-7">
