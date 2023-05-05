@@ -1,6 +1,5 @@
 
 
-
 const Home = ()=>{
         const Data = [{
             id:1,
