@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import About from "./Routes/about/about";
 import Home from "./Routes/Home/home";
 import SignIn from "./Routes/SignIn/signin";
+import Login from "./Routes/Login/login";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route index element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Route>
     </Routes>
   );
