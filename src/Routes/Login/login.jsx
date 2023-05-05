@@ -9,7 +9,7 @@ const Login = () => {
       <div className="w-80 bg-white rounded-lg">
         <div className="flex items-center justify-between p-2">
           <span className="text-lg">Login with</span>
-          <p className="cursor-progress">
+          <p className="cursor-progress hover:shadow:md">
             <AiOutlineClose />
           </p>
         </div>
