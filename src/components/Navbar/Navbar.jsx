@@ -51,7 +51,7 @@ const Navbar = () => {
               SignIn
             </p>
           </Link>
-          <Link to={"/signin"}>
+          <Link to={"/login"}>
             <li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">
               <i class="fa-solid fa-circle-user"></i>
             </li>
