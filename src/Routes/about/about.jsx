@@ -16,7 +16,7 @@ const About = ()=>{
             </h2>
             <p className="mt-4 text-lg text-gray-500">
               Dogecoin (DOGE) was created as a lighthearted alternative to
-              traditional cryptocurrencies like Bitcoin in 2013
+              traditional cryptocurrencies like Bitcoin in 2013.
             </p>
           </div>
           <div className="mt-20 flex justify-around items-center flex-wrap">

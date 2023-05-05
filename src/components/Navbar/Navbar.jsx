@@ -14,6 +14,7 @@ const Navbar = ()=>{
         </div>
         <div>
           <ul className="flex gap-7">
+            <Link to={"/"}><li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">Home</li></Link>
             <div className="dropdown">
               <Link to={"/about"}>
                 <li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">
@@ -22,13 +23,13 @@ const Navbar = ()=>{
                 </li>
               </Link>
               <div class="dropdown-content">
-                <a href="3" className="hover:text-blue-600">
+                <a href="3" className="hover:text-blue-600 hover:text-[1.1rem]">
                   Team
                 </a>
-                <a href="2" className="hover:text-blue-600">
+                <a href="2" className="hover:text-blue-600 hover:text-[1.1rem]">
                   Careers
                 </a>
-                <a href="1" className="hover:text-blue-600">
+                <a href="1" className="hover:text-blue-600 hover:text-[1.1rem]">
                   Blog
                 </a>
               </div>
