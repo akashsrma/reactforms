@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
+  
     <nav className=" w-full h-24 text-blue-400 shadow-md  flex justify-between items-center p-[1rem]">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center ">
         <Link to={"/"}>
           {" "}
-          <h2 className="p-10 text-black cursor-pointer">Dogecoin</h2>
+          <h2 className="p-10 text-blue-400 cursor-pointer">Dogecoin</h2>
         </Link>
       </div>
       <div className="p-7 py-3">
@@ -62,6 +63,7 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
+    
   );
 };
 
