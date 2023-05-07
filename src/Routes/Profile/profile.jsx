@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import profile from "../../assets/images/R.png"
+import profileone from "../../assets/images/Rr.png"
 const Profile = () => {
   // State variables to store form data
   const [name, setName] = useState('');
@@ -20,7 +21,11 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-gray-100 flex flex-row ">
+      <div className='flex flex-row'>
+        <img src={profile} alt='profile' className='w-[18rem] h-[18rem] my-[9rem] mx-[9rem] hover:shadow-2xl cursor-pointer' />
+        <img src={profileone} alt='profile' className='w-[2rem] h-[2rem] my-[23rem] ml-[-12rem]' />
+      </div>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
           <h1 className="text-4xl font-bold mb-8">Create Your Profile</h1>
@@ -70,7 +75,7 @@ const Profile = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-blue-500 hover:bg-blue-700 hover:br-[6rem] text-white font-bold py-2 px-4 rounded br-3"
             >
               Create Profile
             </button>
