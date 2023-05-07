@@ -1,56 +1,45 @@
-// import Teach from "../../assets/images/teach.webp"
-
-
-
-// const Home = () => {
-//   return (
-//           <>
-//           <img src={Teach} alt="teah" className="bg-cover bg-center w-[100%] h-[40rem]"/>
-          
-          
-//           </>
-//   )
-// }
-
-// export default Home;
-
 import React from 'react';
-import image from '../../assets/images/doge.jpg';
-import elon from "../../assets/images/step.webp"
-import don from "../../assets/images/DOGECOIN-1.webp"
-import phone from "../../assets/images/phone.png"
-// import Teach from "../../assets/images/gun.jpg"
+import Footer from '../Footer/footer';
 
-function Homepage() {
+function Home() {
   return (
-    <>          
-    
-     {/* <img src={Teach} alt="teah" className="bg-cover bg-center w-[100%] h-[40rem]"/> */}
-
-    <div className='flex mx-9 ' >
-      <div className="bg-white shadow-2xl rounded-lg p-10 mx-3 my-4 ">
-        <img className="w-64 h-64 rounded-full mx-auto mb-5" src={image} alt="Homepage" />
-        <img className="w-64 h-64 rounded-full mx-auto mb-5" src={image} alt="Homepage" />
-        <img className="w-64 h-64 rounded-full mx-auto mb-5" src={image} alt="Homepage" />
-       <p className='text-blue-600 text-xl font-extrabold mx-24'> Crypto</p>
-      </div>
-      <div className='my-[1rem] mx-7 w-[50rem]'>
-        <div className='flex'>
-            <img src={elon} className='w-[75%] rounded-lg my-3' alt='elon'/>
-            <img src={phone} alt='phone' className='w-[50%] mx-9 hover: cursor-pointer'/>
+    <div className="bg-gray-100">
+      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div className="mt-10 sm:mt-0">
+          <div className="md:grid md:grid-cols-2 md:gap-6">
+            <div className="mt-5 md:mt-0 md:col-span-2">
+              <h2 className="text-2xl font-bold text-gray-900">Welcome to our website</h2>
+              <p className="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum tristique lacus, vel commodo sapien. Nullam sed urna euismod, dictum turpis eu, sagittis urna.</p>
+              <div className="mt-5">
+                <a href="home.jsx" className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                  Get started
+                </a>
+              </div>
             </div>
-
-        <img src={don} className='w-[100%] my-3  rounded-lg' alt='don' />
+            <div className="mt-5 md:mt-0 md:col-span-1">
+              <div className="shadow-lg rounded-lg overflow-hidden">
+                <img className="w-full h-64 object-cover object-center" src="https://images.unsplash.com/photo-1520699496252-5a810fda9667?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="A person typing on a laptop"/>
+                <div className="px-4 py-2">
+                  <h3 className="text-lg font-medium text-gray-900">Stay productive</h3>
+                  <p className="mt-1 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum tristique lacus, vel commodo sapien.</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-5 md:mt-0 md:col-span-1">
+              <div className="shadow-lg rounded-lg overflow-hidden">
+                <img className="w-full h-64 object-cover object-center" src="https://images.unsplash.com/photo-1546908981-efceda4769c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="A person working on a computer"/>
+                <div className="px-4 py-2">
+                  <h3 className="text-lg font-medium text-gray-900">Improve your skills</h3>
+                  <p className="mt-1 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus bibendum tristique lacus, vel commodo sapien.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-
+        <Footer />
+      </div>
     </div>
-    </>
-
   );
 }
 
-export default Homepage;
-
-
+export default Home;
