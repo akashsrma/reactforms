@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className=" w-full h-24 text-blue-400 shadow-md  flex justify-between items-center p-[1rem]">
+    <nav className=" w-full h-24 text-white bg-black shadow-md  flex justify-between items-center p-[1rem]">
       <div className="flex items-center justify-center ">
         <Link to={"/"}>
           {" "}
@@ -69,24 +69,24 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="p-7 py-3">
-        <ul className="flex gap-7">
+        <ul className="flex gap-[4rem]">
           <Link to={"/"}>
-            <li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">
+            <li className=" flex items-center justify-items-center text-2xl hover:text-blue-600 cursor-pointer">
               <i class="fa-solid fa-house"></i>
             </li>
-            <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
+            {/* <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
               Home
-            </p>
+            </p> */}
           </Link>
           <div className="dropdown">
             <Link to={"/about"}>
-              <li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">
+              <li className=" flex items-center justify-items-center text-2xl hover:text-blue-600 cursor-pointer">
                 <i class="fa-solid fa-address-card"></i>
                 <AiOutlineCaretDown />
               </li>
-              <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
+              {/* <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
                 About
-              </p>
+              </p> */}
             </Link>
             <div class="dropdown-content">
               <a href="3" className="hover:text-blue-600 hover:text-[1.1rem]">
@@ -101,28 +101,28 @@ const Navbar = () => {
             </div>
           </div>
           <Link to={"/signin"}>
-            <li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">
+            <li className=" flex items-center justify-items-center text-2xl hover:text-blue-600 cursor-pointer">
               <FaSignInAlt />
             </li>
-            <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
+            {/* <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
               SignIn
-            </p>
+            </p> */}
           </Link>
           <Link to={"/login"}>
-            <li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">
+            <li className=" flex items-center justify-items-center text-2xl hover:text-blue-600 cursor-pointer">
               <i class="fa-solid fa-circle-user"></i>
             </li>
-            <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
+            {/* <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
               Login
-            </p>
+            </p> */}
           </Link>
           <Link to={"/profile"}>
-            <li className=" flex items-center justify-items-center text-2xl hover:text-red-600 cursor-pointer">
+            <li className=" flex items-center justify-items-center text-2xl hover:text-blue-600 cursor-pointer">
               <AiOutlineProfile />
             </li>
-            <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
+            {/* <p className="opacity-0 hover:opacity-100 hover:text-blue-600">
               Profile
-            </p>
+            </p> */}
           </Link>
         </ul>
       </div>

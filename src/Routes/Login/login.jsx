@@ -5,7 +5,9 @@ import { FaFacebookF } from "react-icons/fa";
 
 const Login = () => {
   return (
-    <div className="w-full h-screen shadow-md flex items-center justify-center bg-transparent">
+    <div className="w-full h-screen shadow-md flex items-center justify-center" style={{
+      backgroundImage:`url("https://images.pexels.com/photos/15473887/pexels-photo-15473887.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")`
+    }}>
       <div className="w-80 bg-white rounded-lg">
         <div className="flex items-center justify-between p-2">
           <span className="text-lg">Login with</span>
