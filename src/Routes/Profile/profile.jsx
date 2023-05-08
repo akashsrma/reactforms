@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import profile from "../../assets/images/R.png"
-import profileone from "../../assets/images/Rr.png"
+import React, { useState } from "react";
+import profile from "../../assets/images/R.png";
+import profileone from "../../assets/images/Rr.png";
+import { ImLocation } from "react-icons/im";
 const Profile = () => {
   // State variables to store form data
-  const [name, setName] = useState('');
-  const [bio, setBio] = useState('');
-  const [location, setLocation] = useState('');
+  const [name, setName] = useState("");
+  const [bio, setBio] = useState("");
+  const [location, setLocation] = useState("");
 
   // Handle form submit
   const handleSubmit = (event) => {
@@ -15,16 +16,24 @@ const Profile = () => {
     console.log({ name, bio, location });
 
     // Reset the form fields
-    setName('');
-    setBio('');
-    setLocation('');
+    setName("");
+    setBio("");
+    setLocation("");
   };
 
   return (
     <div className="bg-gray-100 flex flex-row ">
-      <div className='flex flex-row'>
-        <img src={profile} alt='profile' className='w-[18rem] h-[18rem] my-[9rem] mx-[9rem] hover:shadow-2xl cursor-pointer' />
-        <img src={profileone} alt='profile' className='w-[2rem] h-[2rem] my-[23rem] ml-[-12rem]' />
+      <div className="flex flex-row">
+        <img
+          src={profile}
+          alt="profile"
+          className="w-[18rem] h-[18rem] my-[9rem] mx-[9rem] hover:shadow-2xl cursor-pointer"
+        />
+        <img
+          src={profileone}
+          alt="profile"
+          className="w-[2rem] h-[2rem] my-[23rem] ml-[-12rem]"
+        />
       </div>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
@@ -32,8 +41,28 @@ const Profile = () => {
 
           {/* Name field */}
           <div className="mb-6">
-            <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+            <label
+              htmlFor="name"
+              className="block text-gray-700 font-bold mb-2"
+            >
               Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              className="w-full border border-gray-400 p-2 rounded-lg"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </div>
+
+          {/* Email field */}
+          <div className="mb-6">
+            <label
+              htmlFor="name"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Email
             </label>
             <input
               type="text"
@@ -59,7 +88,10 @@ const Profile = () => {
 
           {/* Location field */}
           <div className="mb-6">
-            <label htmlFor="location" className="block text-gray-700 font-bold mb-2">
+            <label
+              htmlFor="location"
+              className="block text-gray-700 font-bold mb-2"
+            >
               Location
             </label>
             <input
@@ -69,6 +101,7 @@ const Profile = () => {
               value={location}
               onChange={(event) => setLocation(event.target.value)}
             />
+            <ImLocation />
           </div>
 
           {/* Submit button */}

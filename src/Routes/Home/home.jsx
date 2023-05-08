@@ -1,7 +1,8 @@
-import React from 'react';
-import Footer from '../Footer/footer';
-import {GrLinkNext} from "react-icons/gr"
-import resume from "../../assets/images/resume.jfif"
+import React from "react";
+import Footer from "../Footer/footer";
+import { GrLinkNext } from "react-icons/gr";
+import resume from "../../assets/images/resume.jfif";
+import { Link } from "react-router-dom";
 // import Logo from "../../assets/images/logo.jpg"
 function Home() {
   return (
@@ -25,20 +26,19 @@ function Home() {
                 years.
               </p>
               <div className="mt-5">
-                <a
-                  href="home.jsx"
+                <Link
+                  to={"/profile"}
                   className="inline-flex items-center justify-center w-80 px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Create Your Profile
                   <GrLinkNext className="mx-[1rem] text-white" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
         <div>
-          <img  src={resume} alt='resume' className='my-3'/>
-          
+          <img src={resume} alt="resume" className="my-3" />
         </div>
         <Footer />
       </div>
