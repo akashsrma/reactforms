@@ -1,7 +1,8 @@
 import React from 'react';
 import Footer from '../Footer/footer';
 import {GrLinkNext} from "react-icons/gr"
-import Logo from "../../assets/images/logo.jpg"
+import resume from "../../assets/images/resume.jfif"
+// import Logo from "../../assets/images/logo.jpg"
 function Home() {
   return (
     <div className="bg-black">
