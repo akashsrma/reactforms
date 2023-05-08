@@ -1,7 +1,8 @@
 import React from 'react';
 import Footer from '../Footer/footer';
 import {GrLinkNext} from "react-icons/gr"
-import Logo from "../../assets/images/logo.jpg"
+// import Logo from "../../assets/images/logo.jpg"
+import resume from "../../assets/images/resume.jfif"
 function Home() {
   return (
     <div className="bg-black">
@@ -22,6 +23,10 @@ function Home() {
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          <img  src={resume} alt='resume' className='my-3'/>
+          
         </div>
         <Footer />
       </div>
