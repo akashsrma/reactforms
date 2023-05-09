@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 const Validation = ()=>{
-    const [values,setValues] = useState([])
+    const [values,] = useState([])
     let errors ={} 
     if(!values.email === ""){
         errors.email="Invalid Email Address"

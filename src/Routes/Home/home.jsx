@@ -1,10 +1,11 @@
 import React from "react";
 import Footer from "../Footer/footer";
 import { GrLinkNext } from "react-icons/gr";
-import resume from "../../assets/images/resume.jfif";
+// import resume from "../../assets/images/resume.jfif";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Typed from "react-typed";
+import design from "../../assets/images/design.jpg"
 
 function Home() {
   return (
@@ -36,7 +37,7 @@ function Home() {
               >
                 <Link
                   to={"/profile"}
-                  className="inline-flex items-center justify-center w-80 px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+                  className=" transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ... inline-flex items-center justify-center w-80 px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Create Your Profile
                   <GrLinkNext className="mx-[1rem] text-white" />
@@ -45,8 +46,19 @@ function Home() {
             </div>
           </div>
         </div>
-        <div>
-          <img src={resume} alt="resume" className="my-3" />
+        <div className="flex flex-row">
+          <div>
+            <img src={design} alt="design" className="my-3 " />
+          </div>
+          <div className="flex flex-col  justify-center items-center">
+            <p className="text-white text-3xl shadow-lg ">
+              Turning Vision Into Reality With Code And Design
+            </p>
+            <p className="text-white mx-3 my-2">
+            A full-stack developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets.
+            </p>
+            {/* <button className="text-white .rounded-2xl .border-white my-3">RESUME</button> */}
+          </div>
         </div>
         <div className="w-full h-96 flex justify-between p-1">
           <motion.div 

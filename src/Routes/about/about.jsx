@@ -4,8 +4,10 @@ import product2 from "../../assets/images/mass.png";
 import product3 from "../../assets/images/Bscholarly.png";
 import product4 from "../../assets/images/apdul.png";
 import product5 from "../../assets/images/alexander.png";
-import look from "../../assets/images/about.png";
+// import look from "../../assets/images/about.png";
 import Footer from "../Footer/footer";
+import man from "../../assets/images/man.jpg"
+import number from "../../assets/images/number.jpg"
 
 const About = () => {
   return (
@@ -108,7 +110,29 @@ const About = () => {
           </div>
         </div>
         <div>
-          <img src={look} alt="look" className="my-3" />
+        <p className="text-black text-7xl mx-[12rem] my-[3rem] shadow-xl">Passion Fules Purpose</p>
+        </div>
+       <div className="flex flex-row">
+
+        <div className="w-[30rem]">
+          <p className="font-extrabold hover:cursor-pointer hover:text-blue-400">
+          BIOGRAPHY
+          </p>
+          <p>
+          Before we can answer this question we need to define passion. Passion, as this executive exemplifies, is energy and engagement for people and the work they do. Passion as an emotion is a valuable trait when channeled appropriately. Focused on helping others understand and doing good work is positive passion. Losing your cool when things go wrong is negative passion. The challenge is to channel the positive to ameliorate or eliminate the negative.
+          </p>
+          <p>Passion becomes the catalyst that galvanizes individuals to commit to their own development as well as to deliver products and services that customers need. Passion too develops when employees commit – on company time – to give back to their community as volunteers.</p>
+           <p>
+           Passion is a powerful driver when applied to purpose. It becomes the personal commitment to making a positive difference to achieve sustainable results.
+           </p>
+        
+        </div>
+        <div>
+          <img src={man} alt="man" className="my-[5rem] mx-[5rem]  cursor-pointer hover:shadow-2xl h-[15rem] w-[18rem]" />
+        </div>
+        <div>
+          <img src={number} alt="number" className="mx-3 w-[20rem] h-[25rem]"  />
+        </div>
         </div>
         <Footer />
       </div>
