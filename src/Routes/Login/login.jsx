@@ -5,6 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Validation from "./validation";
 // import {useFormik} from "formik";
 
 const Login = () => {
@@ -13,13 +14,15 @@ const Login = () => {
     password: "",
   });
 
+const [errors,setError] =useState({ })
+
   function handleChange(e) {
     setValues({ ...values, [e.target.email]: e.target.value });
   }
 
-  function handleSubmit() {
+  function handleSubmit(e) {
     e.preventDefault();
-    validation(values);
+    setError (Validation(values));
   }
 
   return (
@@ -76,6 +79,9 @@ const Login = () => {
                 onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
+              {errors.email && <p style={{color:"red", fontSize:"13px"}}>{errors.email}</p>
+              
+            }
             </div>
             <div className="p-2 flex items-center justify-center">
               <input
@@ -85,6 +91,9 @@ const Login = () => {
                 onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
+                {errors.password && <p style={{color:"red", fontSize:"13px"}}>{errors.password}</p>
+              
+            }
             </div>
             <div className="p-2 flex items-center justify-center ">
               <button

@@ -8,8 +8,8 @@ const SignUp = () => {
   const [formValues, setFormValues] = useState(initialValues);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [email]: value });
+    const { name, values } = e.target;
+    setFormValues({ ...formValues, [name]: values });
     console.log(formValues);
   };
   return (
