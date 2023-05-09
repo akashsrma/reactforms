@@ -37,7 +37,7 @@ function Home() {
               >
                 <Link
                   to={"/profile"}
-                  className="inline-flex items-center justify-center w-80 px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+                  className=" transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 ... inline-flex items-center justify-center w-80 px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   Create Your Profile
                   <GrLinkNext className="mx-[1rem] text-white" />
@@ -48,7 +48,7 @@ function Home() {
         </div>
         <div className="flex flex-row">
           <div>
-            <img src={design} alt="design" className="my-3" />
+            <img src={design} alt="design" className="my-3 " />
           </div>
           <div className="flex flex-col  justify-center items-center">
             <p className="text-white text-3xl shadow-lg ">
