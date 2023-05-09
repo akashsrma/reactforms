@@ -22,7 +22,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-gray-100 flex flex-row ">
+    <div className="bg-cyan-500 flex flex-row ">
       <div className="flex flex-row">
         <img
           src={profile}

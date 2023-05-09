@@ -3,9 +3,10 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./Routes/about/about";
 import Home from "./Routes/Home/home";
-import SignIn from "./Routes/SignIn/signin";
+// import SignIn from "./Routes/SignIn/signin";
 import Login from "./Routes/Login/login";
 import Profile from "./Routes/Profile/profile";
+import SignUp from "./Routes/SignUp/signup";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       >
         <Route index element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route path="/signin" element={<SignIn  name="John Doe"
+        <Route path="/signup" element={<SignUp  name="John Doe"
         image="https://example.com/profile.jpg"
         bio="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus velit vitae quam lobortis, at semper libero commodo."
       />}></Route>

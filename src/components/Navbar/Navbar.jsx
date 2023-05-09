@@ -100,7 +100,7 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <Link to={"/signin"}>
+          <Link to={"/signup"}>
             <li className=" flex items-center justify-items-center text-2xl hover:text-blue-600 cursor-pointer">
               <FaSignInAlt />
             </li>

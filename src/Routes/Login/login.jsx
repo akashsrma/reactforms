@@ -2,13 +2,34 @@ import { AiOutlineClose } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { BsGoogle } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {useFormik} from "formik";
+
 
 const Login = () => {
+
+  const formik = useFormik({
+    // initialValues : (
+    //   name : "",
+    //   email:""
+    // )
+  })
+
+
+
   return (
-    <div className="w-full h-screen shadow-md flex items-center justify-center" style={{
-      backgroundImage:`url("https://images.pexels.com/photos/15473887/pexels-photo-15473887.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")`
-    }}>
-      <div className="w-80 bg-white rounded-lg">
+    <div className="w-full h-screen shadow-md flex items-center justify-center bg-cyan-500">
+      <motion.div className="w-80 bg-white rounded-lg"
+      animate={{
+        x:100,
+        rotate:360
+      }}
+      transition={{
+        type:"spring",
+        stiffness:100
+      }}      
+      >
         <div className="flex items-center justify-between p-2">
           <span className="text-lg">Login with</span>
           <p className="cursor-progress hover:shadow:md">
@@ -52,11 +73,13 @@ const Login = () => {
               <input
                 type="Password"
                 placeholder="Password"
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
             </div>
             <div className="p-2 flex items-center justify-center ">
-              <button className="w-full p-3 text-white bg-sky-400 hover:bg-sky-500 rounded-sm">
+              <button type="submit" className="w-full p-3 text-white bg-sky-400 hover:bg-sky-500 rounded-sm">
                 LOGIN
               </button>
             </div>
@@ -67,9 +90,9 @@ const Login = () => {
             <div className="flex items-center justify-center flex-col p-2">
               <p>
                 <span className="opacity-40"> Looking to </span>
-                <a href="1" className="text-blue-600">
+                <Link to={"/signup"} className="text-blue-600">
                   create an account ?
-                </a>
+                  </Link>
               </p>
               <p>
                 <a href="1" className="text-blue-600">
@@ -79,7 +102,7 @@ const Login = () => {
             </div>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

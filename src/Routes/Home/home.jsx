@@ -3,7 +3,10 @@ import Footer from "../Footer/footer";
 import { GrLinkNext } from "react-icons/gr";
 import resume from "../../assets/images/resume.jfif";
 import { Link } from "react-router-dom";
-// import Logo from "../../assets/images/logo.jpg"
+import { motion }  from "framer-motion"
+
+
+
 function Home() {
   return (
     <div className="bg-black">
@@ -25,7 +28,13 @@ function Home() {
                 largest businesses in their transformation journeys for over 50
                 years.
               </p>
-              <div className="mt-5">
+              <motion.div className="mt-5"
+              animate={{
+                x:1000,
+                opacity:1
+              }}
+             
+              >
                 <Link
                   to={"/profile"}
                   className="inline-flex items-center justify-center w-80 px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
@@ -33,7 +42,7 @@ function Home() {
                   Create Your Profile
                   <GrLinkNext className="mx-[1rem] text-white" />
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
