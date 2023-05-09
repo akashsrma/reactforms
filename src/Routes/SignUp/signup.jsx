@@ -1,35 +1,26 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import Typed from "react-typed";
 
 const SignUp = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const initialValues = { name: "", email: "", password: "" };
+  const [formValues, setFormValues] = useState(initialValues);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newUser = {
-      name,
-      email,
-      password,
-    };
-    try {
-      const response = await axios.post('/api/create-account', newUser);
-      console.log(response.data);
-      // Reset the form after submitting the data
-      setName('');
-      setEmail('');
-      setPassword('');
-    } catch (error) {
-      console.log(error);
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [email]: value });
+    console.log(formValues);
   };
-
   return (
     <div className="flex justify-center bg-cyan-500 items-center h-screen">
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h2 className="text-center text-black font-bold text-2xl mb-4">Create An Account</h2>
+      <form
+        // onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      >
+        <h2 className="text-center text-black font-bold text-2xl mb-4">
+          Create An <Typed strings={["Account"]} typeSpeed={40} />
+        </h2>
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Name
@@ -37,10 +28,11 @@ const SignUp = () => {
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="name"
+            name="name"
             type="text"
             placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={formValues.name}
+            onChange={handleChange}
             required
           />
         </div>
@@ -51,24 +43,29 @@ const SignUp = () => {
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="email"
+            name="email"
             type="email"
             placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formValues.email}
+            onChange={handleChange}
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="password"
+          >
             Password
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
+            name="password"
             placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formValues.password}
+            onChange={handleChange}
             required
           />
         </div>

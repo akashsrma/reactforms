@@ -4,31 +4,36 @@ import { BsGoogle } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {useFormik} from "formik";
-
+import { useState } from "react";
+// import {useFormik} from "formik";
 
 const Login = () => {
+  const [values, setValues] = useState({
+    name: "",
+    password: "",
+  });
 
-  const formik = useFormik({
-    // initialValues : (
-    //   name : "",
-    //   email:""
-    // )
-  })
+  function handleChange(e) {
+    setValues({ ...values, [e.target.email]: e.target.value });
+  }
 
-
+  function handleSubmit() {
+    e.preventDefault();
+    validation(values);
+  }
 
   return (
     <div className="w-full h-screen shadow-md flex items-center justify-center bg-cyan-500">
-      <motion.div className="w-80 bg-white rounded-lg"
-      animate={{
-        x:100,
-        rotate:360
-      }}
-      transition={{
-        type:"spring",
-        stiffness:100
-      }}      
+      <motion.div
+        className="w-80 bg-white rounded-lg"
+        animate={{
+          x: 100,
+          rotate: 360,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+        }}
       >
         <div className="flex items-center justify-between p-2">
           <span className="text-lg">Login with</span>
@@ -61,11 +66,14 @@ const Login = () => {
           <hr className="w-3/6" />
         </div>
         <div>
-          <form action="form">
+          <form onSubmit={handleSubmit}>
             <div className="p-2 flex items-center justify-center">
               <input
                 type="text"
+                name="email"
                 placeholder="Email"
+                value={values.email}
+                onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
             </div>
@@ -73,13 +81,16 @@ const Login = () => {
               <input
                 type="Password"
                 placeholder="Password"
-                value={name}
-                onChange={(e)=>setName(e.target.value)}
+                value={values.password}
+                onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
             </div>
             <div className="p-2 flex items-center justify-center ">
-              <button type="submit" className="w-full p-3 text-white bg-sky-400 hover:bg-sky-500 rounded-sm">
+              <button
+                type="submit"
+                className="w-full p-3 text-white bg-sky-400 hover:bg-sky-500 rounded-sm"
+              >
                 LOGIN
               </button>
             </div>
@@ -92,7 +103,7 @@ const Login = () => {
                 <span className="opacity-40"> Looking to </span>
                 <Link to={"/signup"} className="text-blue-600">
                   create an account ?
-                  </Link>
+                </Link>
               </p>
               <p>
                 <a href="1" className="text-blue-600">

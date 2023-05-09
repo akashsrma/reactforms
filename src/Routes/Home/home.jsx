@@ -3,9 +3,8 @@ import Footer from "../Footer/footer";
 import { GrLinkNext } from "react-icons/gr";
 import resume from "../../assets/images/resume.jfif";
 import { Link } from "react-router-dom";
-import { motion }  from "framer-motion"
-
-
+// import { motion } from "framer-motion";
+import Typed from "react-typed";
 
 function Home() {
   return (
@@ -20,7 +19,7 @@ function Home() {
               }}
             >
               <h2 className="text-4xl font-bold text-white">
-                Welcome to our website
+                <Typed strings={["Welcome to Our Website"]} typeSpeed={40} />
               </h2>
               <p className=" text-center text-gray-400 text-2xl">
                 TCS is an IT services, consulting and business solutions
@@ -28,12 +27,12 @@ function Home() {
                 largest businesses in their transformation journeys for over 50
                 years.
               </p>
-              <motion.div className="mt-5"
-              animate={{
-                x:1000,
-                opacity:1
-              }}
-             
+              <div
+                className="mt-5"
+                animate={{
+                  x: 100,
+                  opacity: 1,
+                }}
               >
                 <Link
                   to={"/profile"}
@@ -42,7 +41,7 @@ function Home() {
                   Create Your Profile
                   <GrLinkNext className="mx-[1rem] text-white" />
                 </Link>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
