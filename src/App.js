@@ -7,7 +7,7 @@ import Home from "./Routes/Home/home";
 import Login from "./Routes/Login/login";
 import Profile from "./Routes/Profile/profile";
 import SignUp from "./Routes/SignUp/signup";
-
+import Team from "./Routes/Team/team"
 function App() {
   return (
     <Routes>
@@ -28,7 +28,7 @@ function App() {
       />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
-
+         <Route path="/Team" element={<Team />}></Route>
       </Route>
     </Routes>
   );

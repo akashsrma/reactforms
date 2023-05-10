@@ -85,7 +85,6 @@ const Profile = () => {
               onChange={(event) => setBio(event.target.value)}
             ></textarea>
           </div>
-
           {/* Location field */}
           <div className="mb-6">
             <label
@@ -120,3 +119,6 @@ const Profile = () => {
 };
 
 export default Profile;
+
+
+

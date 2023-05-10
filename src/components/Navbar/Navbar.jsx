@@ -90,7 +90,7 @@ const Navbar = () => {
             </Link>
             <div class="dropdown-content">
               <a href="3" className="hover:text-blue-600 hover:text-[1.1rem]">
-                Team
+               <Link to={"/Team"}> Team </Link>
               </a>
               <a href="2" className="hover:text-blue-600 hover:text-[1.1rem]">
                 Careers
