@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { app } from "./utils/firebase";
+// import { app } from "./utils/firebase";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter app={app}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>

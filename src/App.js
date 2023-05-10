@@ -7,10 +7,12 @@ import Home from "./Routes/Home/home";
 import Login from "./Routes/Login/login";
 import Profile from "./Routes/Profile/profile";
 import SignUp from "./Routes/SignUp/signup";
+import { AuthContextProvider } from "./context/authContext";
 
 function App() {
   return (
-    <Routes>
+    <AuthContextProvider>
+      <Routes>
       <Route
         path="/"
         element={
@@ -31,6 +33,7 @@ function App() {
 
       </Route>
     </Routes>
+    </AuthContextProvider>
   );
 }
 

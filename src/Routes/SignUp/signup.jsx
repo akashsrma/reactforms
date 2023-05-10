@@ -2,28 +2,56 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import axios from "axios";
 import Typed from "react-typed";
-import Validation from "../../components/Validation/validation";
+// import Validation from "../../components/Validation/validation";
+import { UserAuth } from "../../context/authContext";
+import Swal from 'sweetalert2'
+
 
 const SignUp = () => {
 
-  const [values, setValues]= useState({
-    first_name:'',
-    last_name:'',
-    email:'',
-    password:'',
-    confirm_password:''
-  });
+    const [email,setEmail] = useState('')
+    const [password,setPassword] = useState('')
+    const [error,setError]=useState('')
 
-  const [errors,setErrors] = useState({});
+    const {createUser} =UserAuth();
+
+    const handleSubmit = async (e)=>{
+        e.preventDefault()
+        setError('')
+        try {
+          await createUser(email,password);
+          
+        } catch (e) {
+          setError(e.message)
+          Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+          )
+          console.log(e.message);
+          
+        }
+    };
+
+
+  // const [values, setValues]= useState({
+  //   first_name:'',
+  //   last_name:'',
+  //   email:'',
+  //   password:'',
+  //   confirm_password:''
+  // });
+
+  // const [errors,setErrors] = useState({});
   
-    const handleChange = (e)=>{
-          setValues({...values, [e.target.name]: [e.target.value]})
-    }
+  //   const handleChange = (e)=>{
+  //         setValues({...values, [e.target.name]: [e.target.value]})
+  //   }
 
-    function handleSubmit(e){
-      e.preventDefault();
-      setErrors(Validation(values))
-    }
+  //   function handleSubmit(e){
+  //     e.preventDefault();
+  //     setErrors(Validation(values))
+  //   }
 
 
 
@@ -48,10 +76,10 @@ const SignUp = () => {
             type="text"
             placeholder="Enter your name"
             // value={name}
-            onChange={handleChange}
+            // onChange={handleChange}
             // required
           />
-          {errors.first_name && <p style={{color:"red"}}> {errors.first_name} </p> }
+          {/* {errors.first_name && <p style={{color:"red"}}> {errors.first_name} </p> } */}
 
         </div>
         <div className="mb-4">
@@ -65,10 +93,10 @@ const SignUp = () => {
             type="text"
             placeholder="Enter your name"
             // value={name}
-            onChange={handleChange}
+            // onChange={handleChange}
             // required
           />
-          {errors.last_name && <p style={{color:"red"}}> {errors.last_name} </p> }
+          {/* {errors.last_name && <p style={{color:"red"}}> {errors.last_name} </p> } */}
 
         </div>
         <div className="mb-4">
@@ -82,10 +110,10 @@ const SignUp = () => {
             type="email"
             placeholder="Enter your email"
             // value={email}
-            onChange={handleChange}
+            onChange={(e)=>setEmail(e.target.value)}
             // required
           />
-          {errors.email && <p style={{color:"red"}}> {errors.email} </p> }
+          {/* {errors.email && <p style={{color:"red"}}> {errors.email} </p> } */}
 
         </div>
         <div className="mb-4">
@@ -102,10 +130,10 @@ const SignUp = () => {
             name="password"
             placeholder="Enter your password"
             // value={password}
-            onChange={handleChange}
+            onChange={(e)=>setPassword(e.target.value)}
             // required
           />
-          {errors.password && <p style={{color:"red"}}> {errors.password} </p> }
+          {/* {errors.password && <p style={{color:"red"}}> {errors.password} </p> } */}
           
         </div>
         <div className="mb-4">
@@ -122,10 +150,10 @@ const SignUp = () => {
             name="password"
             placeholder="Enter your password"
             // value={password}
-            onChange={handleChange}
+            // onChange={handleChange}
             // required
           />
-          {errors.password && <p style={{color:"red"}}> {errors.password} </p> }
+          {/* {errors.password && <p style={{color:"red"}}> {errors.password} </p> } */}
           
         </div>
         <div className="flex items-center justify-between">
