@@ -2,20 +2,33 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import axios from "axios";
 import Typed from "react-typed";
+import Validation from "../../components/Validation/validation";
 
 const SignUp = () => {
-  const initialValues = { name: "", email: "", password: "" };
-  const [formValues, setFormValues] = useState(initialValues);
 
-  const handleChange = (e) => {
-    const { name, values } = e.target;
-    setFormValues({ ...formValues, [name]: values });
-    console.log(formValues);
-  };
+  const [values, setValues]= useState({
+    name:'',
+    email:'',
+    password:'',
+  });
+
+  const [errors,setErrors] = useState({});
+  
+    const handleChange = (e)=>{
+          setValues({...values, [e.target.name]: [e.target.value]})
+    }
+
+    function handleSubmit(){
+      setErrors(Validation(values))
+    }
+
+
+
+
   return (
     <div className="flex justify-center bg-cyan-500 items-center h-screen">
       <form
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
         <h2 className="text-center text-black font-bold text-2xl mb-4">
@@ -31,7 +44,7 @@ const SignUp = () => {
             name="name"
             type="text"
             placeholder="Enter your name"
-            value={formValues.name}
+            // value={name}
             onChange={handleChange}
             required
           />
@@ -46,7 +59,7 @@ const SignUp = () => {
             name="email"
             type="email"
             placeholder="Enter your email"
-            value={formValues.email}
+            // value={email}
             onChange={handleChange}
             required
           />
@@ -64,7 +77,7 @@ const SignUp = () => {
             type="password"
             name="password"
             placeholder="Enter your password"
-            value={formValues.password}
+            // value={password}
             onChange={handleChange}
             required
           />
