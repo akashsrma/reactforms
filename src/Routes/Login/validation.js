@@ -1,23 +1,39 @@
-import { useState } from "react"
+const Validation = (values)=>{
+    let error = {}
+    const first_name_pattern = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    const Last_name_pattern = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    const email_pattern= /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    const password_pattern =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/
 
-
-const Validation = ()=>{
-    const [values,] = useState([])
-    let errors ={} 
-    if(!values.email === ""){
-        errors.email="Invalid Email Address"
+    if(values.first_name === ''){
+        error.first_name = "first_Name should not be empty"
     }
-    else if(values.email.length < 5){
-        errors.email = "Email must be more than 5 char"
+    if(first_name_pattern.test(values.first_name)){
+        error.first_name = "first_Name Didn't Match"
     }
-
-    if(values.password){
-        errors.password = "password Required"
-    }else if(values.password.length < 9){
-        errors.password="password must be more than 5"
+    if(values.last_name === ''){
+        error.last_name = "last_Name should not be empty"
     }
-
-        return errors;
+    if(first_name_pattern.test(values.first_name)){
+        error.last_name = "last_Name Didn't Match"
+    }
+    if(values.email === ''){
+        error.email = "Email should not be empty"
+    }
+    if(email_pattern.test(values.email)){
+        error.email = "Email Didn't Match"
+    }
+    if(values.password === ''){
+        error.password = "Password should not be empty"
+    }
+    if(!password_pattern.test(values.password)){
+        error.password = "Password Didn't Match"
+    }
+    if(String(values.confirm_password) !== String(values.password)){
+        error.confirm_password ="Password not Matched"
+    }
+    
+    return error;
 }
 
 export default Validation;
