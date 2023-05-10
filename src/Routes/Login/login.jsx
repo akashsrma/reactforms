@@ -5,25 +5,59 @@ import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Validation from "./validation";
+import { UserAuth } from "../../context/authContext";
+// import Validation from "./validation";
 // import {useFormik} from "formik";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-  });
 
-const [errors,setError] =useState({ })
+const [email,setEmail] = useState('');
+const [password,setPassword]=useState('')
+const [error,setError] = useState('')
 
-  function handleChange(e) {
-    setValues({ ...values, [e.target.value]: e.target.name });
+const {login} = UserAuth()
+
+
+const handleSubmit = async (e)=>{
+  e.preventDefault()
+  setError('');
+  try {
+    await login(email,password)
+    Swal.fire(
+      'Good job!',
+      'You clicked the button!',
+      'success'
+    )
+  } catch (e) {
+    setError(e.message)
+    Swal.fire(
+      'Good job!',
+      'But Invalid Email and Password',
+      'You clicked the button!',
+      'error'
+    )
+    console.log(e.message)
+    
   }
+}
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setError(Validation(values));
-  }
+
+//   const [values, setValues] = useState({
+//     email: "",
+//     password: "",
+//   });
+
+// const [errors,setError] =useState({ })
+
+//   function handleChange(e) {
+//     setValues({ ...values, [e.target.value]: [e.target.name] });
+//   }
+
+//   function handleSubmit(e) {
+//     e.preventDefault();
+//     setError(Validation(values));
+//   }
 
   return (
     <div className="w-full h-screen shadow-md flex items-center justify-center bg-cyan-500">
@@ -75,25 +109,21 @@ const [errors,setError] =useState({ })
                 type="text"
                 name="email"
                 placeholder="Email"
-                
-                onChange={handleChange}
+                onChange={(e)=>setEmail(e.target.value)}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
-              {errors.email && <p style={{color:"red", fontSize:"13px"}}>{errors.email}</p>
-              
-            }
+              <br />
+              {/* {errors.email && <p style={{color:"red"}}>{errors.email}</p>} */}
             </div>
             <div className="p-2 flex items-center justify-center">
               <input
                 type="Password"
                 placeholder="Password"
                 // value={values.password}
-                onChange={handleChange}
+                onChange={(e)=>setPassword(e.target.value)}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
-                {errors.password && <p style={{color:"red", fontSize:"13px"}}>{errors.password}</p>
-              
-            }
+                {/* {errors.password && <p style={{color:"red"}}>{errors.password}</p>} */}
             </div>
             <div className="p-2 flex items-center justify-center ">
               <button
