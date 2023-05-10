@@ -10,19 +10,19 @@ import Validation from "./validation";
 
 const Login = () => {
   const [values, setValues] = useState({
-    name: "",
+    email: "",
     password: "",
   });
 
 const [errors,setError] =useState({ })
 
   function handleChange(e) {
-    setValues({ ...values, [e.target.email]: e.target.value });
+    setValues({ ...values, [e.target.value]: e.target.name });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    setError (Validation(values));
+    setError(Validation(values));
   }
 
   return (
@@ -75,7 +75,7 @@ const [errors,setError] =useState({ })
                 type="text"
                 name="email"
                 placeholder="Email"
-                value={values.email}
+                
                 onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
@@ -87,7 +87,7 @@ const [errors,setError] =useState({ })
               <input
                 type="Password"
                 placeholder="Password"
-                value={values.password}
+                // value={values.password}
                 onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
