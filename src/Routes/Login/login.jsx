@@ -17,7 +17,7 @@ const Login = () => {
 const [errors,setError] =useState({ })
 
   function handleChange(e) {
-    setValues({ ...values, [e.target.value]: e.target.name });
+    setValues({ ...values, [e.target.value]: [e.target.name] });
   }
 
   function handleSubmit(e) {
@@ -79,7 +79,8 @@ const [errors,setError] =useState({ })
                 onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
-              {errors.email && <p style={{color:"red", fontSize:"13px"}}>{errors.email}</p>
+              <br />
+              {errors.email && <p style={{color:"red"}}>{errors.email}</p>
               
             }
             </div>
@@ -91,7 +92,7 @@ const [errors,setError] =useState({ })
                 onChange={handleChange}
                 className="w-full p-4 px-2 py-2  border-2 border-neutral-800 rounded-sm"
               />
-                {errors.password && <p style={{color:"red", fontSize:"13px"}}>{errors.password}</p>
+                {errors.password && <p style={{color:"red"}}>{errors.password}</p>
               
             }
             </div>
