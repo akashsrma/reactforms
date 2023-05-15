@@ -8,10 +8,6 @@ import Login from "./Routes/Login/login";
 import Profile from "./Routes/Profile/profile";
 import SignUp from "./Routes/SignUp/signup";
 import { AuthContextProvider } from "./context/authContext";
-<<<<<<< HEAD
-=======
-
->>>>>>> f738cf88f5142e5f2fb14ca7642e7a8c592aa104
 function App() {
   return (
     <AuthContextProvider>
