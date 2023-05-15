@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import profile from "../../assets/images/R.png";
 import profileone from "../../assets/images/Rr.png";
-import { ImLocation } from "react-icons/im";
 const Profile = () => {
   // State variables to store form data
   const [name, setName] = useState("");
