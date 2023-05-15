@@ -100,7 +100,7 @@ const Profile = () => {
               value={location}
               onChange={(event) => setLocation(event.target.value)}
             />
-            <ImLocation />
+            {/* <ImLocation /> */}
           </div>
 
           {/* Submit button */}
